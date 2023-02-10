@@ -18,40 +18,25 @@ function App() {
 	};
 
 	return (
-		<div className={style.app}>
-			<div className={style.section}>
-				<h1 className={style.mainTitle}>Zùpitlang</h1>
-				<div className={style.radioButtons}>
-					<button
-						className={`${style.button} ${isEncode && style.isEncode}`}
-						onClick={() => setIsEncode(true)}
-					>
-						Encoder
-					</button>
-					<button
-						className={`${style.button} ${!isEncode && style.isEncode}`}
-						onClick={() => setIsEncode(false)}
-					>
-						Décoder
-					</button>
-				</div>
-				<textarea
-					className={style.textArea}
-					onChange={controllerInput}
-					spellcheck={false}
-					value={text}
-				></textarea>
-			</div>
-			<div className={style.section}>
-				<h2>Traduit : </h2>
-				<textarea
-					value={textEncoded}
-					className={style.textTranslated}
-					spellcheck={false}
-				></textarea>
-			</div>
-		</div>
-	);
+    <div className={style.app}>
+      <div className={style.section}>
+        <h1 className={style.mainTitle}>Zùpitlang</h1>
+        <div className={style.radioButtons}>
+          <button className={`${style.button} ${isEncode && style.isEncode}`} onClick={() => setIsEncode(true)}>
+            Encoder
+          </button>
+          <button className={`${style.button} ${!isEncode && style.isEncode}`} onClick={() => setIsEncode(false)}>
+            Décoder
+          </button>
+        </div>
+        <textarea className={style.textArea} onChange={controllerInput} spellcheck={false} value={text}></textarea>
+      </div>
+      <div className={style.section}>
+        <h2 className={style.title2}>Traduit : </h2>
+        <textarea value={textEncoded} className={style.textTranslated} spellcheck={false}></textarea>
+      </div>
+    </div>
+  );
 }
 
 export default App;
